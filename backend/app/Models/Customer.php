@@ -1,0 +1,36 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
+
+class Customer extends Model
+{
+    protected $keyType = 'string';
+    public $incrementing = false;
+
+    protected $fillable = [
+        'id',
+        'restaurant_id',
+        'name',
+        'phone',
+        'address',
+        'notes',
+    ];
+
+    protected static function boot()
+    {
+        parent::boot();
+        static::creating(function ($model) {
+            if (empty($model->id)) {
+                $model->id = (string) Str::uuid();
+            }
+        });
+    }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+}

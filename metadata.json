@@ -1,0 +1,6 @@
+{
+  "name": "Cripsy Chicken POS",
+  "description": "The production-ready, offline-capable restaurant POS system for Cripsy Chicken, featuring Arabic/English localization and multi-role workflows.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
